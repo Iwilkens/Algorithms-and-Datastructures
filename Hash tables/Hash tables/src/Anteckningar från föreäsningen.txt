@@ -1,0 +1,91 @@
+Anteckningar från föreäsningen
+
+Del (1), länkad lista sök efter nästa nyckel. Sök blir O(n). Att lägga till element? konstant om vi inte behöver ordna dem först?
+
+Är det värt att ha sorterat, kanske för att vi kan avbrtyta när vi hittat vårt element. Men inte för lägga till blir så pass mycket långsammare så
+nej inte värrt enl johan. 
+
+Trädstruktur, sorterad array ger båda O(lg(n)).
+
+Han gör både linjör och binary search benchat på sin Zip fil.
+Lookup blir inte en sökning utan vi går bara efter nyckeln och hämtar elementet O(1), lookup. Denna snabba lookup blir på bekostnad av hur mycket minne 
+vi måste allokera för den stora variationen på index vi har. 
+
+Problemet med att använda key som index är att arrayen blir väldigt luftig med element utspridda. 
+
+Hashtabell
+Syfte är att ta nyckeln och göra om den till ett index som vi kan arbeta med. 
+
+Ju mindre modulo tal vi har, desto större sannolikhet för kollisioner, alltså att två element för samma hashnyckel. 
+
+Blir skillnad när vi tarmodulo 12345 eller mod 10000 iom att vi delar med 10 000 får vi en oregelbundenhet och det första stora siffran spelar ingen roll.
+Vi får kluster, återkommande mönster när vi väljer jämna och trevliga tal. Bästa möjliga primtal! :)
+
+Vi ska skriva en klass som följer Sieve, han går iallafall igenom teori för det. 
+
+Om jag har väldigt bra koll på mina nycklar går det att konstruera perfekta primtal för att få 0. Men vi kan vi kan ju också hantera när det uppstår
+kollisioner i programmet. 
+
+Han använder sin sieve metod för att få fram ett lämpligt primtal att använda sig av i sina programkörningar. Oklart om vi behöver ha det men kanske.
+
+
+
+Kollisionshantering
+Lösning 1) gå igenom hela och lägg till på slutet. Hantera om det uppkommer dubletter (Buckets)
+Vi behöverdå hakvar den ursprungliga nyckeln för att kunna göra en korrekt jämförelse. 
+
+public class Buckets{
+    Node[] data
+    int mod
+    private class Node{
+        private Integer code;
+        private String name;
+        private Integer pop;
+        private Node next;
+
+        private Node(invärden)
+
+        puvlic string lookup,
+        
+        public void(insert code, Node entry){
+            Integer key = code % mod;
+
+            Node nxt = data[key];
+            Node prv = null;
+
+            while nxt != null
+            {
+            iff code equals (nxt.code)
+            //replace the found entrynxt = nxt.next break
+            }
+            prv = nxt
+            nzt = nxt.next;
+        }
+
+        if prv != null
+        prv.next = enrey
+        enrtey .next = nxt
+
+        else data [key] = entry
+        entry. next = nxt.
+    }
+}
+
+
+public int compare(Integer key){
+    Integer idx = key % mod;
+    Node nxt = data[indx]
+    int comp = 0
+
+    while sats för att se hur många träffar vi hittade?
+}
+
+Kommer rulla på bra mcket snabbare än trädimplmenetation som skulle vara log(n) då vi kan hoppa direkt dit vi ska och gå igenom
+de värdena på rätt plats i listan. 
+
+
+
+    Lösning 2 linear probing
+    Vi gör en  nycket och hoppar dit för att jämföra värdena i närheten. Om de inte är lika kan vi lägga till där. Men hur gör vi
+    om det ligger en massa värden där? Jo vi går vidare tills det att vi hittar en tom plats. Om vi kör linear probing måste vi ha 
+    ett primtal som är större än antal sökningar vi ska göra. 

@@ -1,0 +1,51 @@
+import java.util.Random;
+
+public class benchmark {
+    public static void main(String[] args) {
+
+        LinkedList a = createList(10);
+        a.print(a);
+        
+        /* 
+        int k = 100;
+        int n =100_000;
+        long t_total = 0; 
+        long t_total2= 0;
+
+        for( int i = 0; i < k; i++){
+            LinkedList a = createList(10);
+
+            long t0 = System.nanoTime();
+            LinkedList b = createList(n);
+            t_total += (System.nanoTime() - t0);
+
+            int[] arrayA = createArray(10);
+
+            long t1 = System.nanoTime();
+            int[] arrayB = createArray(n);
+            t_total2 += (System.nanoTime() - t1);
+            //b.append(a);
+            //appendArray(arrayA, arrayB);
+        }
+        System.out.println("Tid för linked list: " + t_total/(double)k);
+        System.out.println("Tid för array: " + t_total2/(double)k);
+        */
+        
+        /*
+        a.print(a);
+        System.out.println("- - - - - - - - - - - - - - - - -");
+        b.print(b);
+
+        System.out.println("- - - - - - - - - - - - - - - - -");
+        */
+    }
+    public static LinkedList createList(int nElements) {
+        Random rnd = new Random();
+        LinkedList temp = new LinkedList(rnd.nextInt(300), null, null);
+        for(int i = 0; i < nElements; i++){
+            temp.append(new LinkedList(rnd.nextInt(300), null, null));
+            System.out.println("varv: " + i);
+        }
+        return temp;
+    }
+}

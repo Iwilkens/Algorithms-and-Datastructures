@@ -1,0 +1,71 @@
+Grafer
+Anteckningar föreläsning
+
+Finns directional graphs. Vår graf har riktiningar på alla länkar, alltså vart du kan ta dig från en stad. Sedan råkar alla länkar gå i 
+båda riktningar. 
+
+Johan har i efterhand åsikten att det hade varit bättre att implementera connections som en länkad lista ist för array.
+
+Naive kör bara som en tok för någon sträcka om den når maxtiden slutar vi. 
+Efter naive, har jag tid kvar? annars returnerar vi något då, eg. sorry vi hann inte. Denna sorry har vi i koden redan? När vi returnerar 0? eller 
+i den nästlade if satsen. Nej nollan är om de är lika
+
+1) inse at det tar lång tid
+2) varför? --> Naiv, den springer runt i olika loopar
+
+Umeå malmö malmö umeå olika pga brända broar?
+
+
+public City lookup (String name){
+    integer inx = hash(name);
+
+    while (true){
+        if (cities[indx]==null){
+            break
+        }
+    }
+
+    blabla bla nytt objekt lägger vi till här
+    han hoppar fram med index = index + 1 % mid
+}
+
+
+Resten av hans shortest. Utöver det skalet som vi fick utan honom.
+
+If disst != null && shrt == null || shrt > dist+ conn dist
+    shrt = dist+ conn dist
+
+
+    tillägg
+
+If shrt != null && max > shrt
+    max = shrt
+
+
+Path______________________
+
+sp = 0
+
+Private int shortest
+if max != null && max < 0 
+    return null;
+
+om lika 0
+
+for (int i = 0; i < sp; i++)
+    if path [i] == from 
+        return null
+
+path[sp++] = from.
+
+
+När vi har lagt till Path behövs inget maxvärde 
+
+han skickar in null i sin första vända av shortest med path additionen
+
+
+Nu när vi har lagt till path kommer vi att kunna söka oss igenom Sverige :)
+Varför går det alltid snabbare att söka norrifrån ? tror brända broar leken här med. 
+
+Vad får vi för tidskomplexitet.
+
